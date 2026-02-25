@@ -12,7 +12,6 @@ let package = Package(
         .library(name: "WebsocketNetworkService", targets: ["WebsocketNetworkService"])
     ],
     dependencies: [
-        //.package(url: "https://github...", exact: Version("1.0.26")),
         .package(name: "CoreToolkit", path: "../core-toolkit"),
         .package(url: "https://github.com/daltoniam/Starscream.git", exact: Version(4, 0, 4))
     ],

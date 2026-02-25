@@ -41,8 +41,8 @@ extension Websocket.ServiceEngine.Incoming : Starscream.WebSocketDelegate {
         case .disconnected(let reason, let code): disconnected("[\(Int(code))]\(reason)")
         case .cancelled:                          disconnected("cancelled")
         case .error(let error):                   react(to: error)
-        case .text(let incoming):                 downstream.send(.received(string: incoming))
-        case .binary(let incoming):               downstream.send(.received(binary: incoming))
+        case .text(let incoming):                 downstream.send(.receivedString(incoming))
+        case .binary(let incoming):               downstream.send(.receivedBinary(incoming))
         case .viabilityChanged(let viability):    guard viability else { disconnected("due to viability"); return }
         case .reconnectSuggested(let suggested):  if suggested { disconnected("reconnect suggested"); return }
         default: log(warning: "[Websocket] skipping websocket event:[\(event)]")

@@ -29,8 +29,8 @@ public extension Websocket {
     enum Event {
         case connected
         case disconnected(_ code: Int = -1)
-        case received(binary: Data)
-        case received(string: String)
+        case receivedBinary(Data)
+        case receivedString(String)
     }
     
     enum Status {
