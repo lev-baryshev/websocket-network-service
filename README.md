@@ -16,8 +16,8 @@ websocket.events
         switch event {
         case .receivedBinary(let incoming): self?.parse(incoming)
         case .receivedString(let incoming): self?.parse(incoming)
-        case .connected:
-        case .disconnected:
+        case .connected:                    self?.onConnect()
+        case .disconnected:                 self?.onDisconnect()
     }
     .store(in: &subscriptions)
 

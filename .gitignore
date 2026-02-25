@@ -21,11 +21,10 @@ xcuserdata
 *.xcbkptlist
 
 ## Other
-*.moved-aside
 *.xccheckout
+*.moved-aside
 *.xcuserstate
 *.xcscmblueprint
-*.xcuserdata
 
 ## Obj-C/Swift specific
 *.hmap
@@ -39,3 +38,4 @@ mocksGenerated.swifttemporary
 0_backup/
 
 .swiftpm/
+xcuserdata/
