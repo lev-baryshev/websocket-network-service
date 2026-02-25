@@ -5,9 +5,11 @@ useful and simple websocket service for Swift
 // start:
 let websocket: Websocket.Service = Websocket.ServiceEngine()
 websocket.connect(to: url)
+
 // send:
 websocket.send(data)
 websocket.send(string)
+
 // receive:
 websocket.events
     .sink { [weak self] in event
@@ -18,6 +20,7 @@ websocket.events
         case .disconnected:
     }
     .store(in: &subscriptions)
+
 // stop:
 websocket.disconnect()
 ```
